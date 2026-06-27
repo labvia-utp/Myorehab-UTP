@@ -82,8 +82,8 @@ order = [
     (2,1,1), (2,1,2), (2,1,3), (2,1,4), (2,1,5),  #BLOCK B
     (1,2,1), (1,2,2), (1,2,3), (1,2,4), (1,2,5),  #BLOCK C
     (2,2,1), (2,2,2), (2,2,3), (2,2,4), (2,2,5),  #BLOCK D
-    (2,3,1), (2,3,2), (2,3,3), (2,3,4), (2,3,5),  #BLOCK E
-    (1,3,1), (1,3,2), (1,3,3), (1,3,4), (1,3,5)   #BLOCK F
+    (1,3,1), (1,3,2), (1,3,3), (1,3,4), (1,3,5),  #BLOCK E
+    (2,3,1), (2,3,2), (2,3,3), (2,3,4), (2,3,5)   #BLOCK F
 ]
 ```
 
@@ -174,11 +174,17 @@ A continuación se muestra una demostración visual del resultado del pipeline (
 
 # Script de Automatización (Experimental).
 
-Es, posible utilizar un script experimental, el cual ejecuta [`mediapipe_analyze.py`](utils/mediapipe_analyze.py) y el Pipeline de anipose: filter -> calibrate -> triangulate, es decir los puntos 2.1 y 2.2. Los puntos anteriores de renombrado y organización deben ser ejecutados manualmente.
+Es, posible utilizar un script experimental [`automate.sh`](utils/automate.sh), el cual ejecuta [`mediapipe_analyze.py`](utils/mediapipe_analyze.py) y el Pipeline de anipose: filter -> calibrate -> triangulate, es decir los puntos 2.1 y 2.2. Los puntos anteriores de renombrado y organización deben ser ejecutados manualmente.
 
-* **Nota de compatibilidad:** Su correcto funcionamiento depende de la configuración del Sistema Operativo. Se ha   testeado en Windows 11 utilizando Git Bash dentro de Windows Terminal.
+* **Nota de compatibilidad:** Su correcto funcionamiento depende de la configuración del Sistema Operativo. Se ha testeado en Windows 11 utilizando Git Bash dentro de Windows Terminal.
 
 * El flujo requiere que MediaPipe se ejecute en el entorno base, mientras que Anipose se ejecuta de forma aislada en su propio entorno virtual.
+
+```bash
+chmod +x automate.sh
+./automate.sh
+```
+
 ---
 
 ## 3. Integración de Datos (Merge Data)
